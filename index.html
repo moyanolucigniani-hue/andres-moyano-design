@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Andres Moyano Design. Diseño gráfico, branding, publicidad y creatividad digital.">
+<title>ANDRES MOYANO® | DESIGN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#101010;
+  --white:#f5f3ef;
+  --pink:#ff174d;
+  --gray:#aaa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Space Grotesk',sans-serif;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1300px;margin:auto}
+
+/* MENU */
+header{
+  position:fixed;
+  top:0;width:100%;
+  z-index:100;
+  background:#101010eF;
+  border-bottom:1px solid #333;
+  backdrop-filter:blur(15px);
+}
+nav{
+  height:78px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:21px;
+  font-weight:700;
+  letter-spacing:-2px;
+  line-height:1;
+}
+.logo span{color:var(--pink)}
+.menu{display:flex;gap:30px}
+.menu a{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  transition:.3s;
+}
+.menu a:hover{color:var(--pink)}
+.contact-link{
+  border:1px solid var(--pink);
+  color:var(--pink);
+  padding:12px 20px;
+  border-radius:30px;
+}
+
+/* HERO */
+.hero{
+  min-height:850px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding:130px 0 70px;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:500px;height:500px;
+  background:var(--pink);
+  filter:blur(180px);
+  opacity:.20;
+  right:-150px;top:100px;
+}
+.eyebrow{
+  color:var(--pink);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  margin-bottom:35px;
+}
+h1{
+  font-size:clamp(65px,12vw,155px);
+  line-height:.82;
+  letter-spacing:-10px;
+  font-weight:700;
+  text-transform:uppercase;
+  position:relative;
+}
+.outline{
+  color:transparent;
+  -webkit-text-stroke:1px white;
+}
+.pink{color:var(--pink)}
+.hero-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-top:55px;
+  gap:30px;
+}
+.hero-bottom p{
+  color:#aaa;
+  max-width:420px;
+  line-height:1.8;
+  font-size:15px;
+}
+.stamp{
+  position:absolute;
+  right:12%;top:27%;
+  width:135px;height:135px;
+  background:var(--pink);
+  color:white;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  font-weight:700;
+  transform:rotate(12deg);
+  animation:rotate 15s linear infinite;
+}
+@keyframes rotate{to{transform:rotate(372deg)}}
+
+/* MOVING TEXT */
+.marquee{
+  background:var(--pink);
+  color:white;
+  padding:17px 0;
+  overflow:hidden;
+  transform:rotate(-2deg) scale(1.03);
+}
+.marquee div{
+  white-space:nowrap;
+  font-size:22px;
+  font-weight:700;
+  animation:move 22s linear infinite;
+}
+@keyframes move{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* SECTIONS */
+section.content{padding:130px 0}
+.section-title{
+  font-size:clamp(45px,8vw,90px);
+  line-height:.9;
+  letter-spacing:-6px;
+  text-transform:uppercase;
+  margin:15px 0 45px;
+}
+.label{
+  color:var(--pink);
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+.intro{
+  color:#aaa;
+  max-width:500px;
+  line-height:1.8;
+  margin-bottom:45px;
+}
+
+/* ABOUT */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+.about-text{
+  font-size:21px;
+  line-height:1.7;
+  color:#ccc;
+}
+.about-text strong{color:var(--pink)}
+.about-art{
+  min-height:370px;
+  background:var(--pink);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  position:relative;
+}
+.about-art span{
+  color:#111;
+  font-size:clamp(65px,9vw,120px);
+  font-weight:700;
+  letter-spacing:-10px;
+  transform:rotate(-12deg);
+}
+
+/* PORTFOLIO */
+.projects{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.project{
+  min-height:420px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.5s;
+}
+.project:hover{transform:translateY(-8px)}
+.project:nth-child(1){background:#e8e0d4;color:#111}
+.project:nth-child(2){background:#f02c50;color:#111}
+.project:nth-child(3){background:#b9c7ff;color:#111}
+.project:nth-child(4){background:#d9ff45;color:#111}
+.project-art{
+  font-size:clamp(55px,8vw,105px);
+  font-weight:700;
+  letter-spacing:-9px;
+  line-height:.82;
+  text-align:center;
+  transition:.5s;
+}
+.project:hover .project-art{transform:scale(1.12) rotate(-5deg)}
+.project-info{
+  position:absolute;
+  bottom:0;left:0;width:100%;
+  padding:23px;
+  background:linear-gradient(transparent,#000a);
+  color:white;
+}
+.project-info small{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:5px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid #444;
+}
+.service{
+  padding:30px 18px 30px 0;
+  border-bottom:1px solid #444;
+}
+.service h3{
+  font-size:22px;
+  margin:40px 0 15px;
+}
+.service p{
+  color:#999;
+  font-size:13px;
+  line-height:1.8;
+}
+.number{color:var(--pink);font-size:12px}
+
+/* CTA */
+.cta{
+  background:var(--pink);
+  color:white;
+  padding:110px 0;
+}
+.cta h2{
+  font-size:clamp(60px,11vw,135px);
+  letter-spacing:-9px;
+  line-height:.9;
+  text-transform:uppercase;
+}
+.cta p{
+  margin-top:35px;
+  max-width:400px;
+  line-height:1.8;
+}
+.cta-button{
+  display:inline-block;
+  background:#111;
+  color:white;
+  padding:17px 27px;
+  border-radius:30px;
+  margin-top:30px;
+  transition:.3s;
+}
+.cta-button:hover{
+  background:white;
+  color:#111;
+  transform:translateY(-5px);
+}
+
+/* FOOTER */
+footer{padding:45px 0}
+.footer-logo{
+  font-size:clamp(35px,6vw,70px);
+  font-weight:700;
+  letter-spacing:-6px;
+}
+.footer-logo span{color:var(--pink)}
+.footer-bottom{
+  border-top:1px solid #444;
+  margin-top:35px;
+  padding-top:20px;
+  color:#888;
+  font-size:11px;
+}
+
+/* ANIMATIONS */
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .9s,transform .9s;
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:800px){
+  .container{width:90%}
+  .menu{display:none}
+  .hero{min-height:720px}
+  h1{letter-spacing:-5px;font-size:17vw}
+  .stamp{width:90px;height:90px;right:5%;font-size:12px}
+  .hero-bottom{flex-direction:column;align-items:start}
+  .about-grid{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+  .project{min-height:350px}
+  .services{grid-template-columns:1fr 1fr}
+  .section-title{letter-spacing:-3px}
+  .cta h2{letter-spacing:-5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="container">
+<a class="logo" href="#inicio">ANDRES<br><span>MOYANO®</span></a>
+<div class="menu">
+<a href="#perfil">Perfil</a>
+<a href="#portafolio">Portafolio</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contacto</a>
+</div>
+<a class="contact-link" href="#contacto">Hablemos ↗</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="container">
+<div class="eyebrow">Publicista · Diseñador · Director creativo</div>
+<h1>
+DISEÑO<br>
+<span class="outline">CON</span> <span class="pink">IDEA.</span><br>
+MARCAS<br>
+CON <span class="outline">ACTITUD.</span>
+</h1>
+<div class="stamp">IDEAS<br>INTO<br>IMPACT</div>
+<div class="hero-bottom">
+<p>Más de 10 años creando comunicación visual, campañas y experiencias de marca. Estrategia, concepto y diseño para hacer que las ideas se vean y se recuerden.</p>
+<span>↓ EXPLORA MI TRABAJO</span>
+</div>
+</div>
+</section>
+
+<div class="marquee">
+<div>BRANDING ✳ PUBLICIDAD ✳ DISEÑO GRÁFICO ✳ DIRECCIÓN DE ARTE ✳ DISEÑO DIGITAL ✳ BRANDING ✳ PUBLICIDAD ✳ DISEÑO GRÁFICO ✳ DIRECCIÓN DE ARTE ✳</div>
+</div>
+
+<section class="content" id="perfil">
+<div class="container">
+<div class="label">01 / Perfil profesional</div>
+<div class="about-grid">
+<div>
+<h2 class="section-title">CREATIVIDAD<br>SIN LÍMITES.</h2>
+</div>
+<div class="about-text">
+<p>Publicista y diseñador gráfico con más de <strong>10 años de experiencia</strong> en comunicación visual, campañas publicitarias, branding, activaciones de marca y diseño digital.</p>
+<br>
+<p>Mi trabajo conecta estrategia, creatividad y diseño para desarrollar marcas y experiencias visuales memorables.</p>
+</div>
+</div>
+<div class="about-art reveal">
+<span>AM® DESIGN</span>
+</div>
+</div>
+</section>
+
+<section class="content" id="portafolio">
+<div class="container">
+<div class="label">02 / Portafolio</div>
+<h2 class="section-title">IDEAS QUE<br>SE HACEN VER.</h2>
+<p class="intro">Una selección de áreas y proyectos de mi trabajo creativo. Aquí iremos incorporando las piezas originales de tu portafolio.</p>
+
+<div class="projects">
+<div class="project reveal">
+<div class="project-art">ARGEL<br>CREATIVE</div>
+<div class="project-info"><b>Campañas gráficas</b><small>PUBLICIDAD · DISEÑO</small></div>
+</div>
+<div class="project reveal">
+<div class="project-art">SOCIAL<br>MATTERS.</div>
+<div class="project-info"><b>Campañas digitales</b><small>REDES · CONTENIDO</small></div>
+</div>
+<div class="project reveal">
+<div class="project-art">LA<br>MAGRELA</div>
+<div class="project-info"><b>La Magrela Bike Shop</b><small>BRANDING · IDENTIDAD</small></div>
+</div>
+<div class="project reveal">
+<div class="project-art">DIGITAL<br>EXPERIENCE</div>
+<div class="project-info"><b>Diseño y desarrollo web</b><small>WEB · EXPERIENCIA DIGITAL</small></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="content" id="servicios">
+<div class="container">
+<div class="label">03 / Especialidades</div>
+<h2 class="section-title">LO QUE<br>HAGO.</h2>
+<div class="services">
+<div class="service reveal">
+<span class="number">01 /</span>
+<h3>Branding</h3>
+<p>Identidad corporativa, creación de marcas, conceptos y sistemas visuales.</p>
+</div>
+<div class="service reveal">
+<span class="number">02 /</span>
+<h3>Publicidad</h3>
+<p>Campañas ATL, BTL, activaciones, comunicación y dirección creativa.</p>
+</div>
+<div class="service reveal">
+<span class="number">03 /</span>
+<h3>Diseño digital</h3>
+<p>Contenido, campañas digitales y comunicación visual para redes.</p>
+</div>
+<div class="service reveal">
+<span class="number">04 /</span>
+<h3>Diseño web</h3>
+<p>Diseño y desarrollo de páginas web y experiencias digitales.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="contacto">
+<div class="container">
+<div class="label" style="color:white">04 / Próximo proyecto</div>
+<h2>HAGAMOS<br>ALGO GRANDE.</h2>
+<p>¿Tienes una idea, una marca o un proyecto? Convirtámoslo en algo que el mundo quiera mirar.</p>
+<a class="cta-button" href="mailto:TU_CORREO@DOMINIO.COM?subject=Nuevo%20proyecto%20Andres%20Moyano%20Design">Hablemos de tu proyecto ↗</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-logo">ANDRES<br><span>MOYANO®</span></div>
+<div class="footer-bottom">
+© <span id="year"></span> ANDRES MOYANO DESIGN · COLOMBIA
+</div>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("visible");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(element=>{
+ observer.observe(element);
+});
+</script>
+</body>
+</html>
